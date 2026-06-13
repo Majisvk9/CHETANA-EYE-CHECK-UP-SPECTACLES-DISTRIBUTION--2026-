@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eye Camp Beneficiary Registration</title>
+    <title>CHETANA Eye Camp 2026</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -12,46 +12,100 @@
 
     <style>
         :root {
-            --primary-color: #0f172a;
-            --accent-color: #3b82f6;
-            --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            --card-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.1);
+            --primary-gradient: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+            --accent-glow: linear-gradient(135deg, #0d9488 0%, #059669 100%);
+            --btn-danger-gradient: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+            --light-glass-bg: rgba(255, 255, 255, 0.85);
+            --card-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
+            --border-color: rgba(203, 213, 225, 0.7);
         }
 
         body {
-            background: var(--bg-gradient);
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfeff 100%);
             min-height: 100vh;
             padding: 20px 10px;
             font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            color: #1e293b;
+            color: #334155;
+            position: relative;
+            overflow-x: hidden;
         }
 
         @media (min-width: 768px) {
-            body {
-                padding: 50px 20px;
-            }
+            body { padding: 40px 20px; }
         }
 
-        /* Modernized Form UI Styling */
+        /* Ambient Pastel Floating Glow Orbs */
+        body::before, body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(20, 184, 166, 0.07);
+            filter: blur(80px);
+            z-index: -1;
+            animation: floatBubble 16s infinite ease-in-out alternate;
+        }
+        body::before { top: -10%; left: -5%; }
+        body::after { bottom: -10%; right: -5%; background: rgba(16, 185, 129, 0.06); animation-delay: 4s; }
+
+        @keyframes floatBubble {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(50px, 50px) scale(1.15); }
+        }
+
+        /* Top Main Campaign Title Banner */
+        .main-camp-banner {
+            background: var(--light-glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: var(--card-shadow);
+            padding: 24px 20px;
+            text-align: center;
+            margin-bottom: 35px;
+            animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .main-camp-banner h1 {
+            margin: 0;
+            font-weight: 800;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #115e59 0%, #064e3b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        @media (min-width: 768px) {
+            .main-camp-banner h1 { font-size: 2.1rem; letter-spacing: 1.5px; }
+        }
+
+        /* Light Elegant Registration Form Card */
         .form-card {
-            background: #ffffff;
+            background: var(--light-glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             border-radius: 24px;
-            border: 1px solid rgba(226, 232, 240, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.7);
             box-shadow: var(--card-shadow);
             padding: 0;
             overflow: hidden;
+            animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
         @media (min-width: 992px) {
             .form-card {
                 position: sticky;
-                top: 30px;
+                top: 25px;
             }
         }
 
         .form-card-header {
-            background: var(--primary-color);
-            padding: 20px 25px;
+            background: var(--primary-gradient);
+            padding: 20px 28px;
             color: #ffffff;
         }
 
@@ -65,64 +119,78 @@
             letter-spacing: 0.5px;
         }
 
-        .form-card-body {
-            padding: 25px;
-        }
+        .form-card-body { padding: 28px; }
 
         .form-label {
-            font-weight: 600;
-            color: #64748b;
+            font-weight: 700;
+            color: #475569;
             font-size: 0.75rem;
             margin-bottom: 6px;
             text-transform: uppercase;
-            letter-spacing: 0.75px;
+            letter-spacing: 0.8px;
         }
 
         .input-group {
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 4px rgba(15, 23, 42, 0.01);
             border-radius: 12px;
             overflow: hidden;
+            border: 1px solid #cbd5e1;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            background: #ffffff;
         }
 
         .input-group-text {
             background-color: #f8fafc;
-            color: #94a3b8;
-            border: 1px solid #cbd5e1;
-            border-right: none;
-            padding-left: 14px;
+            color: #64748b;
+            border: none;
+            padding-left: 15px;
             padding-right: 10px;
         }
 
         .form-control, .form-select {
-            border-radius: 12px;
+            border: none;
             padding: 10px 14px;
-            border: 1px solid #cbd5e1;
             font-size: 0.95rem;
-            color: #0f172a;
-            background-color: #fff;
+            color: #1e293b;
+            background-color: transparent;
+        }
+
+        .form-control::placeholder {
+            color: #94a3b8;
         }
 
         .form-control:focus, .form-select:focus {
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+            box-shadow: none;
+            background-color: transparent;
+        }
+
+        /* Light Form Element Focus Rules */
+        .input-group:focus-within {
+            border-color: #0d9488;
+            box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.15);
+            transform: translateY(-1px);
+        }
+        .input-group:focus-within .input-group-text {
+            color: #0d9488;
         }
 
         .btn-submit {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            background: var(--accent-glow);
             border: none;
             font-weight: 600;
-            padding: 12px;
+            padding: 13px;
             border-radius: 12px;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 14px rgba(13, 148, 136, 0.2);
         }
 
         .btn-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 6px 20px rgba(13, 148, 136, 0.3);
+            filter: brightness(1.05);
         }
 
-        /* Responsive Scaling Engine for A4 Container Viewports */
+        /* Scale Adaptor Wrapper Rules for strict printable rendering layout */
         .preview-scroll-container {
             width: 100%;
             overflow-x: visible;
@@ -131,21 +199,23 @@
             align-items: flex-start;
             padding: 0;
             margin: 0 auto;
+            animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
         }
 
         #a4Wrapper {
             width: 210mm;
             min-width: 210mm;
             transform-origin: top center;
-            transition: transform 0.2s ease;
+            transition: transform 0.3s ease;
         }
 
+        /* Print Sheet Core Structural Matrix Container */
         #a4Prescription {
             width: 210mm;
             height: 297mm;
             background: #ffffff;
-            padding: 20mm 20mm;
-            box-shadow: var(--card-shadow);
+            padding: 15mm 20mm 20mm 20mm;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.06);
             color: #000000;
             display: flex;
             flex-direction: column;
@@ -153,29 +223,61 @@
             box-sizing: border-box;
             position: relative;
             overflow: hidden;
+            border-radius: 12px;
             border: 1px solid #e2e8f0;
+        }
+
+        /* Trust Top Letterhead Header Graphic Matrix Layout */
+        .trust-header-block {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .trust-header-block h2 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            margin: 0 0 2px 0;
+            letter-spacing: 1px;
+            color: #000000;
+        }
+
+        .trust-header-block .trust-sub {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin: 0 0 2px 0;
+            color: #1e293b;
+            letter-spacing: 0.3px;
+        }
+
+        .trust-header-block .trust-reg {
+            font-size: 0.85rem;
+            font-weight: bold;
+            font-family: monospace, sans-serif;
+            margin: 0;
+            color: #334155;
         }
 
         .rx-header {
             text-align: center;
-            border-bottom: 3px double #000000;
-            padding-bottom: 12px;
-            margin-bottom: 25px;
+            border-bottom: 4px double #000000;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
         }
 
-        .rx-header h2 {
-            margin: 0;
-            font-weight: 800;
+        .rx-header h3 {
+            margin: 8px 0 0 0;
+            font-weight: 700;
             letter-spacing: 2px;
-            font-size: 2.1rem;
+            font-size: 1.25rem;
             color: #000000;
+            text-transform: uppercase;
         }
 
         .meta-info-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             font-size: 0.95rem;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             font-family: monospace, sans-serif;
         }
 
@@ -190,16 +292,16 @@
         }
 
         .rx-table td, .rx-table th {
-            border: 1.5px solid #000000;
-            padding: 14px 18px;
+            border: 2px solid #000000;
+            padding: 12px 16px;
             vertical-align: middle;
         }
 
         .blank-clinical-space {
             flex: 1 1 auto;
-            border: 2px dashed #cbd5e1;
-            margin: 30px 0;
-            border-radius: 12px;
+            border: 2px dashed #94a3b8;
+            margin: 25px 0;
+            border-radius: 14px;
             position: relative;
             padding: 20px;
             background: #f8fafc;
@@ -225,7 +327,7 @@
         .signature-row {
             display: flex;
             justify-content: space-between;
-            padding-top: 60px;
+            padding-top: 55px;
         }
 
         .sig-box {
@@ -241,38 +343,59 @@
 
         .action-btns {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 25px;
             margin-bottom: 40px;
+            animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
         }
 
         .action-btns .btn {
-            padding: 12px 30px;
+            padding: 13px 35px;
             font-weight: 600;
             border-radius: 12px;
-            transition: all 0.2s;
-            background: #dc2626;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            background: var(--btn-danger-gradient);
             border: none;
-            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+            box-shadow: 0 4px 14px rgba(225, 29, 72, 0.25);
             width: 100%;
-            max-width: 300px;
+            max-width: 320px;
         }
         
         .action-btns .btn:hover {
             transform: translateY(-2px);
-            background: #b91c1c;
-            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
+            box-shadow: 0 6px 20px rgba(225, 29, 72, 0.35);
+            filter: brightness(1.05);
+        }
+
+        /* Animation Timelines */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-<div class="container-fluid">
+<div class="container-fluid px-2 px-sm-4">
+    
+    <div class="row justify-content-center">
+        <div class="col-xl-11 col-12">
+            <div class="main-camp-banner">
+                <h1>Chetana Eye Check Up & Spectacles Distribution Camp- 2026</h1>
+            </div>
+        </div>
+    </div>
+
     <div class="row justify-content-center g-4">
         
         <div class="col-xl-4 col-lg-5 col-md-12">
             <div class="form-card">
                 <div class="form-card-header">
-                    <h4><i class="fa-solid fa-id-card"></i> Registration Panel</h4>
+                    <h4><i class="fa-solid fa-address-card me-1"></i> Registration Panel</h4>
                 </div>
                 <div class="form-card-body">
                     <form id="beneficiaryForm">
@@ -282,7 +405,7 @@
                             <label class="form-label">Full Name</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
-                                <input type="text" class="form-control" id="Name" name="Name" placeholder="John Doe" required>
+                                <input type="text" class="form-control" id="Name" name="Name" placeholder="Souvik Maji" required autocomplete="off">
                             </div>
                         </div>
 
@@ -378,9 +501,14 @@
                     <div id="a4Prescription">
                         
                         <div>
-                            <div class="rx-header">
-                                <h2>EYE CAMP PRESCRIPTION</h2>
+                            <div class="trust-header-block">
+                                <h2>CHETANA CHARITABLE TRUST</h2>
+                                <div class="trust-sub">Purba Radhanagar, Khanakul, Hooghly</div>
+                                <div class="trust-reg">Govt. Regd. No. : IV- 061500014 / 2022</div>
                             </div>
+
+                           
+                            
                             <div class="meta-info-grid">
                                 <div><b>Patient ID :</b> <span id="patientId" style="color: #d32f2f; font-weight: bold;"></span></div>
                                 <div class="text-end"><b>Date :</b> <span id="todayDate" style="font-weight: bold;"></span></div>
@@ -403,9 +531,9 @@
                         <div class="blank-clinical-space"></div>
 
                         <div class="prescription-footer">
-                            <div style="font-size: 0.85rem; border-top: 1.5px dashed #000000; padding-top: 12px; font-style: italic; color: #475569;">
+                            <div style="font-size: 0.85rem; border-top: 2px dashed #000000; padding-top: 12px; font-style: italic; color: #475569;">
                                 <i class="fa-circle-check fa-solid text-success me-1"></i> 
-                                Registered via authorized Eye Care Outreach Initiative program. Valid for camp diagnostic execution criteria workflow.
+                                Eye Check Up & Spectacles Distribution- 2026.Organized by- Chetana Charitable Trust 
                             </div>
                             <div class="signature-row">
                                 <div class="sig-box">
@@ -421,7 +549,7 @@
                                 <div class="sig-box">
                                     <div style="height: 50px;"></div>
                                     <div class="sig-line"></div>
-                                    <b style="color: #2563eb;"><i class="fa-solid fa-user-md me-1"></i> Ophthalmologist</b>
+                                    <b style="color: #0f766e;"><i class="fa-solid fa-user-md me-1"></i> Doctor Signature</b>
                                 </div>
                             </div>
                         </div>
@@ -443,17 +571,17 @@
 <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbysp2_DQlc5RhPR9KMSwvG91GveNxGg5V3dRKfIxIR5gLK8iZ_VbxlcXHJ2ZC_vSi2GCQ/exec";
 
-    // Fluid Scale Adaptor logic for maintaining structural viewport containment
+    // Layout Scale Adaptor matching A4 dimensions cleanly down on viewport compression
     function handleResponsiveScaling() {
         const wrapper = document.getElementById('a4Wrapper');
         const container = document.querySelector('.preview-scroll-container');
         const containerWidth = container.offsetWidth;
-        const targetWidth = 793.7; // Approx width of 210mm in pixels
+        const targetWidth = 793.7;
 
         if (containerWidth < targetWidth) {
             const scaleFactor = containerWidth / targetWidth;
             wrapper.style.transform = `scale(${scaleFactor})`;
-            container.style.height = `${297 * 3.7795 * scaleFactor}px`; // Adapts outer bound heights
+            container.style.height = `${297 * 3.7795 * scaleFactor}px`;
         } else {
             wrapper.style.transform = 'none';
             container.style.height = 'auto';
@@ -533,9 +661,15 @@
     function downloadPDF() {
         const element = document.getElementById("a4Prescription");
         
+        const inputName = document.getElementById("Name").value.trim();
+        const formattedFileName = inputName ? 'Rx_' + inputName.replace(/\s+/g, '_') + '.pdf' : 'Rx_Camp_Patient.pdf';
+        
+        const baseRadius = element.style.borderRadius;
+        element.style.borderRadius = "0px";
+
         const opt = {
             margin: 0,
-            filename: 'Rx_Camp_' + document.getElementById("patientId").innerText + '.pdf',
+            filename: formattedFileName,
             image: { type: 'jpeg', quality: 1.0 },
             html2canvas: { 
                 scale: 2.5, 
@@ -555,13 +689,13 @@
                     pdf.deletePage(i);
                 }
             }
+            element.style.borderRadius = baseRadius;
         }).save();
     }
 
-    // Lifecycle setup execution mappings
     initPrescriptionIdentifiers();
     updatePreview();
-    setTimeout(handleResponsiveScaling, 200); // Small timeout allows content rendering calculations
+    setTimeout(handleResponsiveScaling, 250);
 </script>
 
 </body>
