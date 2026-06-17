@@ -14,7 +14,7 @@
         :root {
             --primary-gradient: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
             --accent-glow: linear-gradient(135deg, #0d9488 0%, #059669 100%);
-            --btn-danger-gradient: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+            --btn-success-gradient: linear-gradient(135deg, #0d9488 0%, #115e59 100%);
             --light-glass-bg: rgba(255, 255, 255, 0.85);
             --card-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
             --border-color: rgba(203, 213, 225, 0.7);
@@ -34,7 +34,6 @@
             body { padding: 40px 20px; }
         }
 
-        /* Ambient Pastel Floating Glow Orbs */
         body::before, body::after {
             content: "";
             position: fixed;
@@ -54,7 +53,6 @@
             100% { transform: translate(50px, 50px) scale(1.15); }
         }
 
-        /* Top Main Campaign Title Banner */
         .main-camp-banner {
             background: var(--light-glass-bg);
             backdrop-filter: blur(12px);
@@ -63,9 +61,12 @@
             border: 1px solid rgba(255, 255, 255, 0.6);
             box-shadow: var(--card-shadow);
             padding: 24px 20px;
-            text-align: center;
             margin-bottom: 35px;
-            animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .main-camp-banner h1 {
@@ -77,34 +78,30 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-transform: uppercase;
+            text-align: center;
         }
 
         @media (min-width: 768px) {
             .main-camp-banner h1 { font-size: 2.1rem; letter-spacing: 1.5px; }
         }
 
-        /* Light Elegant Registration Form Card */
         .form-card {
-            background: var(--light-glass-bg);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(186, 230, 253, 0.7);
             box-shadow: var(--card-shadow);
             padding: 0;
             overflow: hidden;
-            animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
         @media (min-width: 992px) {
-            .form-card {
-                position: sticky;
-                top: 25px;
-            }
+            .form-card { position: sticky; top: 25px; }
         }
 
         .form-card-header {
-            background: var(--primary-gradient);
+            background: linear-gradient(135deg, #0369a1 0%, #0c4a6e 100%);
             padding: 20px 28px;
             color: #ffffff;
         }
@@ -123,7 +120,7 @@
 
         .form-label {
             font-weight: 700;
-            color: #475569;
+            color: #334155;
             font-size: 0.75rem;
             margin-bottom: 6px;
             text-transform: uppercase;
@@ -134,14 +131,13 @@
             box-shadow: 0 2px 4px rgba(15, 23, 42, 0.01);
             border-radius: 12px;
             overflow: hidden;
-            border: 1px solid #cbd5e1;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid #bae6fd;
             background: #ffffff;
         }
 
         .input-group-text {
-            background-color: #f8fafc;
-            color: #64748b;
+            background-color: #f0f9ff;
+            color: #0369a1;
             border: none;
             padding-left: 15px;
             padding-right: 10px;
@@ -155,61 +151,37 @@
             background-color: transparent;
         }
 
-        .form-control::placeholder {
-            color: #94a3b8;
-        }
-
-        .form-control:focus, .form-select:focus {
-            box-shadow: none;
-            background-color: transparent;
-        }
-
-        /* Light Form Element Focus Rules */
-        .input-group:focus-within {
-            border-color: #0d9488;
-            box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.15);
-            transform: translateY(-1px);
-        }
-        .input-group:focus-within .input-group-text {
-            color: #0d9488;
-        }
+        .form-control:focus, .form-select:focus { box-shadow: none; background-color: transparent; }
 
         .btn-submit {
-            background: var(--accent-glow);
+            background: var(--btn-success-gradient);
             border: none;
             font-weight: 600;
-            padding: 13px;
+            padding: 15px;
             border-radius: 12px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 4px 14px rgba(13, 148, 136, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(13, 148, 136, 0.25);
         }
 
         .btn-submit:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(13, 148, 136, 0.3);
-            filter: brightness(1.05);
+            box-shadow: 0 6px 20px rgba(13, 148, 136, 0.35);
         }
 
-        /* Scale Adaptor Wrapper Rules for strict printable rendering layout */
         .preview-scroll-container {
             width: 100%;
             overflow-x: visible;
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            padding: 0;
-            margin: 0 auto;
-            animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
         }
 
         #a4Wrapper {
             width: 210mm;
             min-width: 210mm;
             transform-origin: top center;
-            transition: transform 0.3s ease;
         }
 
-        /* Print Sheet Core Structural Matrix Container */
         #a4Prescription {
             width: 210mm;
             height: 297mm;
@@ -227,17 +199,17 @@
             border: 1px solid #e2e8f0;
         }
 
-        /* Trust Top Letterhead Header Graphic Matrix Layout */
         .trust-header-block {
             text-align: center;
-            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 4px double #000000;
+            margin-bottom: 15px;
         }
 
         .trust-header-block h2 {
             font-size: 1.85rem;
             font-weight: 800;
             margin: 0 0 2px 0;
-            letter-spacing: 1px;
             color: #000000;
         }
 
@@ -246,61 +218,93 @@
             font-weight: 600;
             margin: 0 0 2px 0;
             color: #1e293b;
-            letter-spacing: 0.3px;
         }
 
         .trust-header-block .trust-reg {
             font-size: 0.85rem;
             font-weight: bold;
             font-family: monospace, sans-serif;
-            margin: 0;
             color: #334155;
         }
 
-        .rx-header {
-            text-align: center;
-            border-bottom: 4px double #000000;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
+        .doctor-selector-grid {
+            display: flex;
+            justify-content: flex-start;
+            gap: 40px;
+            margin-bottom: 15px;
+            padding: 8px 16px;
+            border: 2px solid #000000;
+            background-color: #fafafa;
         }
 
-        .rx-header h3 {
-            margin: 8px 0 0 0;
-            font-weight: 700;
-            letter-spacing: 2px;
-            font-size: 1.25rem;
+        .doc-check-item {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            font-weight: bold;
             color: #000000;
-            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .doc-check-box {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #000000;
+            margin-right: 10px;
+            display: inline-block;
+            position: relative;
+            background: #ffffff;
+        }
+
+        .doc-check-item.checked .doc-check-box::after {
+            content: "✓";
+            position: absolute;
+            top: -6px;
+            left: 1px;
+            font-size: 16px;
+            font-weight: 900;
+            color: #000000;
         }
 
         .meta-info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            justify-content: flex-end;
             font-size: 0.95rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-family: monospace, sans-serif;
         }
 
-        .patient-data-block {
-            margin-bottom: 10px;
-        }
-
-        .rx-table {
+        .patient-print-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 1rem;
+            border: 2px solid #000000;
+            margin-bottom: 15px;
         }
 
-        .rx-table td, .rx-table th {
-            border: 2px solid #000000;
-            padding: 12px 16px;
+        .patient-print-table td {
+            padding: 12px 14px;
+            border-right: 2px solid #000000;
+            font-size: 1.1rem;
+            color: #000000 !important;
             vertical-align: middle;
+        }
+
+        .patient-print-table td:last-child {
+            border-right: none;
+        }
+
+        .patient-text-content {
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #000000 !important;
+            display: inline-block;
+            margin-left: 5px;
         }
 
         .blank-clinical-space {
             flex: 1 1 auto;
             border: 2px dashed #94a3b8;
-            margin: 25px 0;
+            margin: 20px 0;
             border-radius: 14px;
             position: relative;
             padding: 20px;
@@ -340,42 +344,6 @@
             border-top: 1.5px solid #000000;
             margin-bottom: 8px;
         }
-
-        .action-btns {
-            text-align: center;
-            margin-top: 25px;
-            margin-bottom: 40px;
-            animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
-        }
-
-        .action-btns .btn {
-            padding: 13px 35px;
-            font-weight: 600;
-            border-radius: 12px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            background: var(--btn-danger-gradient);
-            border: none;
-            box-shadow: 0 4px 14px rgba(225, 29, 72, 0.25);
-            width: 100%;
-            max-width: 320px;
-        }
-        
-        .action-btns .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(225, 29, 72, 0.35);
-            filter: brightness(1.05);
-        }
-
-        /* Animation Timelines */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
     </style>
 </head>
 <body>
@@ -385,7 +353,7 @@
     <div class="row justify-content-center">
         <div class="col-xl-11 col-12">
             <div class="main-camp-banner">
-                <h1>Chetana Eye Check Up & Spectacles Distribution Camp- 2026</h1>
+                <h1>Chetana Eye Check Up & Spectacles Distribution Camp - 2026</h1>
             </div>
         </div>
     </div>
@@ -405,7 +373,7 @@
                             <label class="form-label">Full Name</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
-                                <input type="text" class="form-control" id="Name" name="Name" placeholder="Full Name" required autocomplete="off">
+                                <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter your Full Name" required autocomplete="off">
                             </div>
                         </div>
 
@@ -456,23 +424,6 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-6 mb-3">
-                                <label class="form-label">HOF Name</label>
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="fa-solid fa-users"></i></span>
-                                    <input type="text" class="form-control" id="HOFName" name="HOFName" placeholder="Head of Family">
-                                </div>
-                            </div>
-                            <div class="col-6 mb-3">
-                                <label class="form-label">HOF Occupation</label>
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="fa-solid fa-briefcase"></i></span>
-                                    <input type="text" class="form-control" id="HOFOccupation" name="HOFOccupation" placeholder="Occupation">
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="mb-4">
                             <label class="form-label">Received Spectacles Previous Year?</label>
                             <div class="input-group">
@@ -486,8 +437,8 @@
                         </div>
 
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-primary btn-submit btn-lg text-white">
-                                <i class="fa-cloud-arrow-up fa-solid me-2"></i> Save Beneficiary Record
+                            <button type="submit" class="btn btn-success btn-submit btn-lg text-white">
+                                <i class="fa-solid fa-cloud-arrow-down me-2"></i> Save Record & Download PDF
                             </button>
                         </div>
                     </form>
@@ -507,33 +458,42 @@
                                 <div class="trust-reg">Govt. Regd. No. : IV- 061500014 / 2022</div>
                             </div>
 
-                           
+                            <div class="doctor-selector-grid">
+                                <div class="doc-check-item" onclick="toggleDoctorCheckbox(this)">
+                                    <span class="doc-check-box"></span>
+                                    <span>Dr. Subrata Kumar Bera</span>
+                                </div>
+                                <div class="doc-check-item" onclick="toggleDoctorCheckbox(this)">
+                                    <span class="doc-check-box"></span>
+                                    <span>Dr. Kuntal Rout</span>
+                                </div>
+                            </div>
                             
                             <div class="meta-info-grid">
-                                <div><b>Patient ID :</b> <span id="patientId" style="color: #d32f2f; font-weight: bold;"></span></div>
-                                <div class="text-end"><b>Date :</b> <span id="todayDate" style="font-weight: bold;"></span></div>
+                                <div><b>Date :</b> <span id="todayDate" style="font-weight: bold;"></span></div>
                             </div>
                         </div>
 
-                        <div class="patient-data-block">
-                            <table class="rx-table">
-                                <tr>
-                                    <td width="25%"><b>Full Name</b></td>
-                                    <td id="pName" width="75%" style="font-size: 1.1rem; font-weight: 700; text-transform: uppercase;"></td>
-                                </tr>
-                                <tr>
-                                    <td width="25%"><b>Gender / Age</b></td>
-                                    <td width="75%"><span id="pGender"></span> / <span id="pAge"></span></td>
-                                </tr>
-                            </table>
-                        </div>
+                        <table class="patient-print-table">
+                            <tr>
+                                <td style="width: 50%;">
+                                    <b>Name:</b> <span id="pName" class="patient-text-content">-</span>
+                                </td>
+                                <td style="width: 25%;">
+                                    <b>Gender:</b> <span id="pGender" class="patient-text-content">-</span>
+                                </td>
+                                <td style="width: 25%;">
+                                    <b>Age:</b> <span id="pAge" class="patient-text-content">-</span>
+                                </td>
+                            </tr>
+                        </table>
 
                         <div class="blank-clinical-space"></div>
 
                         <div class="prescription-footer">
                             <div style="font-size: 0.85rem; border-top: 2px dashed #000000; padding-top: 12px; font-style: italic; color: #475569;">
                                 <i class="fa-circle-check fa-solid text-success me-1"></i> 
-                                Eye Check Up & Spectacles Distribution- 2026.Organized by- Chetana Charitable Trust 
+                                 Eye Check Up & Spectacles Distribution- 2026.Organized by- Chetana Charitable Trust.
                             </div>
                             <div class="signature-row">
                                 <div class="sig-box">
@@ -557,12 +517,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="action-btns">
-                <button onclick="downloadPDF()" class="btn btn-danger btn-lg shadow-sm text-white">
-                    <i class="fa-solid fa-file-pdf me-2"></i> Export PDF File
-                </button>
-            </div>
         </div>
 
     </div>
@@ -571,7 +525,6 @@
 <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbysp2_DQlc5RhPR9KMSwvG91GveNxGg5V3dRKfIxIR5gLK8iZ_VbxlcXHJ2ZC_vSi2GCQ/exec";
 
-    // Layout Scale Adaptor matching A4 dimensions cleanly down on viewport compression
     function handleResponsiveScaling() {
         const wrapper = document.getElementById('a4Wrapper');
         const container = document.querySelector('.preview-scroll-container');
@@ -591,19 +544,25 @@
     window.addEventListener('resize', handleResponsiveScaling);
     window.addEventListener('DOMContentLoaded', handleResponsiveScaling);
 
+    function toggleDoctorCheckbox(element) {
+        element.classList.toggle('checked');
+    }
+
     function initPrescriptionIdentifiers() {
         const d = new Date();
         const generatedID = "EC-" + d.getFullYear() + String(d.getMonth() + 1).padStart(2, '0') + String(d.getDate()).padStart(2, '0') + "-" + Math.floor(100 + Math.random() * 900);
-        
-        document.getElementById("patientId").innerHTML = generatedID;
         document.getElementById("FormPatientId").value = generatedID;
-        document.getElementById("todayDate").innerHTML = d.toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' });
+        
+        const day = String(d.getDate()).padStart(2, '0');
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        const year = d.getFullYear();
+        document.getElementById("todayDate").innerHTML = `${day}/${month}/${year}`;
     }
 
     function updatePreview() {
-        document.getElementById("pName").innerHTML = document.getElementById("Name").value || "-";
-        document.getElementById("pGender").innerHTML = document.getElementById("Gender").value || "-";
-        document.getElementById("pAge").innerHTML = document.getElementById("Age").value ? document.getElementById("Age").value + " Yrs" : "-";
+        document.getElementById("pName").textContent = document.getElementById("Name").value.trim().toUpperCase() || "-";
+        document.getElementById("pGender").textContent = document.getElementById("Gender").value || "-";
+        document.getElementById("pAge").textContent = document.getElementById("Age").value.trim() ? document.getElementById("Age").value.trim() + " YRS" : "-";
     }
 
     document.querySelectorAll("input, select").forEach(el => {
@@ -614,9 +573,12 @@
     document.getElementById("beneficiaryForm").addEventListener("submit", function(e) {
         e.preventDefault();
 
+        // Lock values inside textContent immediately on form submission
+        updatePreview();
+
         Swal.fire({
-            title: 'Saving Records...',
-            text: 'Uploading data securely to system directory.',
+            title: 'Processing Action...',
+            text: 'Saving registration record securely and preparing PDF...',
             allowOutsideClick: false,
             didOpen: () => { Swal.showLoading(); }
         });
@@ -639,15 +601,10 @@
             return r.text();
         })
         .then(res => {
-            Swal.fire({
-                icon: 'success',
-                title: 'Data Saved Successfully',
-                showConfirmButton: false,
-                timer: 2000
-            });
-            document.getElementById("beneficiaryForm").reset();
-            initPrescriptionIdentifiers();
-            updatePreview();
+            // SUCCESSFUL FETCH: Add a explicit 400ms delay to let DOM tree update perfectly before PDF generation runs
+            setTimeout(() => {
+                executeDownloadPDF();
+            }, 400);
         })
         .catch(err => {
             Swal.fire({
@@ -658,9 +615,8 @@
         });
     });
 
-    function downloadPDF() {
+    function executeDownloadPDF() {
         const element = document.getElementById("a4Prescription");
-        
         const inputName = document.getElementById("Name").value.trim();
         const formattedFileName = inputName ? 'Rx_' + inputName.replace(/\s+/g, '_') + '.pdf' : 'Rx_Camp_Patient.pdf';
         
@@ -690,7 +646,21 @@
                 }
             }
             element.style.borderRadius = baseRadius;
-        }).save();
+        }).save().then(() => {
+            // CRITICAL: The registration form is completely reset ONLY after the download pipeline initiates/completes
+            Swal.fire({
+                icon: 'success',
+                title: 'Data Saved & PDF Generated',
+                showConfirmButton: false,
+                timer: 2000
+            });
+            
+            document.getElementById("beneficiaryForm").reset();
+            initPrescriptionIdentifiers();
+            updatePreview();
+            
+            document.querySelectorAll('.doc-check-item').forEach(item => item.classList.remove('checked'));
+        });
     }
 
     initPrescriptionIdentifiers();
