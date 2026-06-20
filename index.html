@@ -219,7 +219,7 @@
             100% { stroke-dashoffset: 283; transform: rotate(360deg); }
         }
 
-        /* FIXED: CRITICAL SUCCESS CHECKMARK SYSTEM STYLES */
+        /* SUCCESS CHECKMARK SYSTEM STYLES */
         .success-checkmark-box {
             display: flex;
             flex-direction: column;
@@ -235,7 +235,6 @@
             height: 100px;
             position: relative;
             margin: 0 auto;
-            /* Added padding window prevents scaling pop values from touching boundaries */
             padding: 8px; 
             box-sizing: border-box;
             overflow: visible !important;
@@ -488,7 +487,7 @@
                     <label class="form-label">Full Name</label>
                     <div class="input-group">
                         <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
-                        <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter Full name" required autocomplete="off">
+                        <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter patient full name" required autocomplete="off">
                     </div>
                 </div>
 
@@ -539,6 +538,24 @@
                     </div>
                 </div>
 
+                <div class="mb-3">
+                    <label class="form-label">Family Occupation</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa-solid fa-briefcase"></i></span>
+                        <select class="form-select" id="FamilyOccupation" name="FamilyOccupation">
+                            <option value="">Select Occupation</option>
+                            <option value="Agriculture">Agriculture</option>
+                            <option value="Day Laborer">Day Laborer</option>
+                            <option value="Business">Small Business</option>
+                            <option value="Service">Service / Job</option>
+                            <option value="Housewife">Housewife</option>
+                            <option value="Student">Student</option>
+                            <option value="Unemployed">Unemployed</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
                 <div class="mb-4">
                     <label class="form-label">Received Spectacles Previous Year?</label>
                     <div class="input-group">
@@ -577,11 +594,11 @@
             <div class="doctor-selector-grid">
                 <div id="docBera" class="doc-check-item">
                     <span class="doc-check-box"></span>
-                    <span>Dr. Subrata Kumar Bera</span>
+                    <span>Dr. Subrata Kumar Bera( D.Opt, B.Opt)</span>
                 </div>
                 <div id="docRout" class="doc-check-item">
                     <span class="doc-check-box"></span>
-                    <span>Dr. Kuntal Rout</span>
+                    <span>Dr. Kuntal Raut( D.Opt, B.Opt, D.O.S)</span>
                 </div>
             </div>
         </div>
@@ -602,7 +619,7 @@
         <div class="prescription-footer">
             <div style="font-size: 0.85rem; border-top: 2px dashed #000000; padding-top: 12px; font-style: italic; color: #475569;">
                 <i class="fa-circle-check fa-solid text-success me-1"></i> 
-                 Eye Check Up & Spectacles Distribution- 2026.Organized by- Chetana Charitable Trust.
+                Registered via authorized Eye Care Outreach Initiative program. Valid for camp diagnostic execution criteria workflow.
             </div>
             <div class="signature-row">
                 <div class="sig-box">
@@ -618,7 +635,7 @@
                 <div class="sig-box">
                     <div style="height: 50px;"></div>
                     <div class="sig-line"></div>
-                    <b style="color: #0f766e;"><i class="fa-solid fa-user-md me-1"></i> Doctor Signature</b>
+                    <b style="color: #0f766e;"><i class="fa-solid fa-user-md me-1"></i> Ophthalmologist</b>
                 </div>
             </div>
         </div>
@@ -732,7 +749,6 @@
                 }
             }
         }).save().then(() => {
-            // Success alert layout matrix explicitly configured to safely contain the pop animations
             Swal.fire({
                 html: `
                     <div class="success-checkmark-box">
